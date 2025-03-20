@@ -92,6 +92,9 @@ modules:
       # Allow mod manager to load from both within the bundle and user data
       - type: patch
         path: info.exult.exult.modmgr-multipaths.patch
+      # Change "missing game data" message to a more helpful Flatpak-specific one
+      - type: patch
+        path: info.exult.exult.gamedata-message.patch
       - type: script
         dest-filename: info.exult.exult.sh
         commands:
@@ -102,6 +105,11 @@ modules:
             fi
             # Replace XDG_DATA_HOME variable in configuration file with actual path
             sed -i "s|\$XDG_DATA_HOME|$XDG_DATA_HOME|g" $XDG_CONFIG_HOME/exult.cfg
+            for gamedir in mt32emu blackgate forgeofvirtue serpentbeta serpentisle silverseed; do
+              if [[ ! -d "$XDG_DATA_HOME/$gamedir" ]]; then
+                mkdir -p "$XDG_DATA_HOME/$gamedir";
+              fi
+            done
             exult -c $XDG_CONFIG_HOME/exult.cfg $@
       - type: script
         dest-filename: info.exult.exult.studio.sh
