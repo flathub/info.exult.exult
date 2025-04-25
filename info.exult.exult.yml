@@ -48,8 +48,8 @@ modules:
       - -Dlibmt32emu_WITH_SYMBOL_VERSIONING=TRUE
     sources:
       - type: archive
-        url: https://github.com/munt/munt/archive/libmt32emu_2_7_1.tar.gz
-        sha256: e4524d52d6799a4e32a961a2e92074f14adcb2f110a4e7a06bede77050cfdaf4
+        url: https://github.com/munt/munt/archive/libmt32emu_2_7_2.tar.gz
+        sha256: 3b0beff64e83d2b4879baba2326eed1300edc9663b3dc52621fc74d196ca9a80
         x-checker-data:
           type: anitya
           project-id: 220368
@@ -160,8 +160,10 @@ modules:
       # FIXME: Delete this after the next Exult stable release
       # Rename Exult Studio files for Flatpak compliance
       - mv ${FLATPAK_DEST}/share/applications/info.exult.studio.desktop ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.studio.desktop
-      - mv ${FLATPAK_DEST}/share/icons/hicolor/scalable/apps/info.exult.studio.svg ${FLATPAK_DEST}/share/icons/hicolor/scalable/apps/${FLATPAK_ID}.studio.svg
-      - desktop-file-edit --set-key=Comment --set-value="Exult game engine editor" ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.studio.desktop
+      - mv ${FLATPAK_DEST}/share/icons/hicolor/scalable/apps/info.exult.studio.svg
+        ${FLATPAK_DEST}/share/icons/hicolor/scalable/apps/${FLATPAK_ID}.studio.svg
+      - desktop-file-edit --set-key=Comment --set-value="Exult game engine editor"
+        ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.studio.desktop
       - desktop-file-edit --set-icon=${FLATPAK_ID}.studio ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.studio.desktop
       - desktop-file-edit --set-key=Exec --set-value=${FLATPAK_ID}.studio.sh ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.studio.desktop
       # Install fixed metainfo to avoid broken XML in the v1.10.1 release
