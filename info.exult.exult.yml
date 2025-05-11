@@ -22,22 +22,11 @@ cleanup:
   - /share/doc
   - /include
   - /lib/cmake
+  - "*.a"
+  - /lib/pkgconfig
 
 modules:
   - shared-modules/linux-audio/fluidsynth2.json
-  - name: vorbis
-    buildsystem: autotools
-    sources:
-      - type: archive
-        url: https://api.github.com/repos/xiph/vorbis/zipball/v1.3.7
-        dest-filename: libvorbis.zip
-        sha256: ec2fbe8ef8cb705481b57dcd3cad37b3dfaa59ed0ac6a386ca675d28b23b3157
-        x-checker-data:
-          type: json
-          url: https://api.github.com/repos/xiph/vorbis/releases/latest
-          version-query: .tag_name | sub("^v"; "")
-          url-query: .zipball_url
-
   # Build mt32emu for MT-32 MIDI emulation
   - name: mt32emu
     buildsystem: cmake-ninja
