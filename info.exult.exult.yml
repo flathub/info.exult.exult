@@ -133,14 +133,6 @@ modules:
         dest-filename: bootstrap
         commands:
           - autoreconf -vi
-      # FIXME: Delete this after the next Exult stable release (current: 1.10.1)
-      - type: file
-        url: https://cdn.jsdelivr.net/gh/exult/exult@master/desktop/info.exult.exult.metainfo.xml
-        sha256: fff1c6a8158c219fa8dde4426fbd542a03277ab6402ca0e58b7ec3aa6bf9ef75
-      # Fix installing icons and metainfo
-      - type: patch
-        path: info.exult.exult.fix-install.patch
-      # END FIXME
     config-opts:
       - --with-debug=symbols
       - --prefix=${FLATPAK_DEST}
@@ -157,19 +149,6 @@ modules:
       - --disable-oggtest
       - --disable-vorbistest
     post-install:
-      # FIXME: Delete this after the next Exult stable release (current: 1.10.1)
-      # Rename Exult Studio files for Flatpak compliance
-      - mv ${FLATPAK_DEST}/share/applications/info.exult.studio.desktop ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.studio.desktop
-      - mv ${FLATPAK_DEST}/share/icons/hicolor/scalable/apps/info.exult.studio.svg
-        ${FLATPAK_DEST}/share/icons/hicolor/scalable/apps/${FLATPAK_ID}.studio.svg
-      - desktop-file-edit --set-key=Comment --set-value="Exult game engine editor"
-        ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.studio.desktop
-      - desktop-file-edit --set-icon=${FLATPAK_ID}.studio ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.studio.desktop
-      - desktop-file-edit --set-key=Exec --set-value=${FLATPAK_ID}.studio.sh ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.studio.desktop
-      # Install fixed metainfo to avoid broken XML in the v1.10.1 release
-      - install -Dvm 644 -t ${FLATPAK_DEST}/share/metainfo/ ${FLATPAK_BUILDER_BUILDDIR}/${FLATPAK_ID}.metainfo.xml
-      # END FIXME
-
       # Install launcher scripts
       - install -Dvm 755 -t ${FLATPAK_DEST}/bin/ *.sh
       - desktop-file-edit --set-key=Exec --set-value=info.exult.exult.sh ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop
