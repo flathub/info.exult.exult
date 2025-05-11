@@ -78,8 +78,8 @@ modules:
     buildsystem: autotools
     sources:
       - type: archive
-        url: https://api.github.com/repos/exult/exult/zipball/v1.10.1
-        sha256: 8e732acc2011beafa2060fd94be02d3e2a9b081e8252f813f1ae0d58e9ee0798
+        url: https://api.github.com/repos/exult/exult/zipball/v1.12.0
+        sha256: 5a2f18c23b06030a11499c2f8d506f532f1794d7c7c0bfd41c932546f8218096
         dest-filename: exult.zip
         x-checker-data:
           type: json
