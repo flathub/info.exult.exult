@@ -1,0 +1,20 @@
+diff --git a/desktop/info.exult.exult.metainfo.xml b/desktop/info.exult.exult.metainfo.xml
+index 8873159a7..7d87917aa 100644
+--- a/desktop/info.exult.exult.metainfo.xml
++++ b/desktop/info.exult.exult.metainfo.xml
+@@ -53,1 +53,4 @@
+  <releases>
++    <release version="1.12.0" date="2025-05-11">
++      <url>https://github.com/exult/exult/releases/tag/v1.12.0</url>
++    </release>
+    <release version="1.10.1" date="2024-09-25">
+diff --git a/desktop/info.exult.exult.studio.metainfo.xml b/desktop/info.exult.exult.studio.metainfo.xml
+index 8873159a7..7d87917aa 100644
+--- a/desktop/info.exult.exult.studio.metainfo.xml
++++ b/desktop/info.exult.exult.studio.metainfo.xml
+@@ -39,1 +39,4 @@
+  <releases>
++    <release version="1.12.0" date="2025-05-11">
++      <url>https://github.com/exult/exult/releases/tag/v1.12.0</url>
++    </release>
+    <release version="1.10.1" date="2024-09-25">

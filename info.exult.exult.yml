@@ -122,6 +122,8 @@ modules:
         dest-filename: bootstrap
         commands:
           - autoreconf -vi
+      - type: patch
+        path: info.exult.exult.releaseinfo.patch
     config-opts:
       - --with-debug=symbols
       - --prefix=${FLATPAK_DEST}
