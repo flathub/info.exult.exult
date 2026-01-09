@@ -22,7 +22,7 @@ cleanup:
   - /share/doc
   - /include
   - /lib/cmake
-  - "*.a"
+  - '*.a'
   - /lib/pkgconfig
 
 modules:
@@ -37,8 +37,8 @@ modules:
       - -Dlibmt32emu_WITH_SYMBOL_VERSIONING=TRUE
     sources:
       - type: archive
-        url: https://github.com/munt/munt/archive/libmt32emu_2_7_2.tar.gz
-        sha256: 3b0beff64e83d2b4879baba2326eed1300edc9663b3dc52621fc74d196ca9a80
+        url: https://github.com/munt/munt/archive/libmt32emu_2_7_3.tar.gz
+        sha256: e51f3475771c9d07116e6cb5ae2e095ef3b11b3107d92c01d3a1dc03be13ff98
         x-checker-data:
           type: anitya
           project-id: 220368
@@ -67,8 +67,8 @@ modules:
     buildsystem: autotools
     sources:
       - type: archive
-        url: https://api.github.com/repos/exult/exult/zipball/v1.12.0
-        sha256: 5a2f18c23b06030a11499c2f8d506f532f1794d7c7c0bfd41c932546f8218096
+        url: https://api.github.com/repos/exult/exult/zipball/v1.12.1
+        sha256: a646954c141fd9d6e4816e0c3f41dbafd6d3ad196839220650f63fec918fa9c1
         dest-filename: exult.zip
         x-checker-data:
           type: json
