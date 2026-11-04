@@ -1,6 +1,6 @@
 app-id: info.exult.exult
 runtime: org.freedesktop.Platform
-runtime-version: '25.08'
+runtime-version: '26.08'
 sdk: org.freedesktop.Sdk
 command: info.exult.exult.sh
 
@@ -37,8 +37,8 @@ modules:
       - -Dlibmt32emu_WITH_SYMBOL_VERSIONING=TRUE
     sources:
       - type: archive
-        url: https://github.com/munt/munt/archive/libmt32emu_2_8_3.tar.gz
-        sha256: 81f8c462f46bc8901618762ae34cf9de93894ff81f41db73c79472fa3baef875
+        url: https://github.com/munt/munt/archive/libmt32emu_2_8_5.tar.gz
+        sha256: 801fa771d7384dc462a626d16c8a4d5b9ff73921ff946ea1f042f1a569ee5e11
         x-checker-data:
           type: anitya
           project-id: 220368
